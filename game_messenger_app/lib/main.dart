@@ -13,6 +13,7 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = false;
     return MaterialApp(
         title: 'Game Messenger App',
 
@@ -26,8 +27,8 @@ class Main extends StatelessWidget {
         },
         themeMode: ThemeMode.system,
         // theme for the entire app
-        darkTheme: darkTheme,
-        theme: lightTheme
+       
+        theme: isDark ? darkTheme : lightTheme
         );
   }
 }
