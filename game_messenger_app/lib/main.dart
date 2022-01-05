@@ -25,9 +25,7 @@ class Main extends StatelessWidget {
         routes: {
           '/': (context) => Walkthrough(),
         },
-        themeMode: ThemeMode.system,
-        // theme for the entire app
-       
+      
         theme: isDark ? darkTheme : lightTheme
         );
   }
