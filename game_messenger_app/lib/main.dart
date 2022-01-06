@@ -1,10 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/walk_through.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp()
+      .then((value) => print('firebase successfully initialized.'));
   runApp(const Main());
 }
 
@@ -25,8 +29,6 @@ class Main extends StatelessWidget {
         routes: {
           '/': (context) => Walkthrough(),
         },
-      
-        theme: isDark ? darkTheme : lightTheme
-        );
+        theme: isDark ? darkTheme : lightTheme);
   }
 }
