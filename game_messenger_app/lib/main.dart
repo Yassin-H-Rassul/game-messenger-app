@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
+import 'package:game_messenger_app/screens/verification_light1.dart';
 import 'package:game_messenger_app/screens/walk_through.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class Main extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => Walkthrough(),
+          'verification1':(context)=>verification_light1(),
         },
       
         theme: isDark ? darkTheme : lightTheme

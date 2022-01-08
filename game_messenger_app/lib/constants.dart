@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData darkTheme = ThemeData.dark().copyWith(
-  
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             primary: Color(0xff002DE3), shape: StadiumBorder())),
@@ -30,7 +29,7 @@ ThemeData darkTheme = ThemeData.dark().copyWith(
       ),
       headline5: GoogleFonts.mulish(
         fontSize: 25,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w600,
       ),
       headline6: GoogleFonts.mulish(
         fontSize: 21,
@@ -104,7 +103,7 @@ ThemeData lightTheme = ThemeData.light().copyWith(
           letterSpacing: 0.25,
           color: Colors.black),
       headline5: GoogleFonts.mulish(
-          fontSize: 25, fontWeight: FontWeight.w400, color: Colors.black),
+          fontSize: 25, fontWeight: FontWeight.w700, color: Colors.black),
       headline6: GoogleFonts.mulish(
           fontSize: 21,
           fontWeight: FontWeight.w500,
@@ -146,5 +145,3 @@ ThemeData lightTheme = ThemeData.light().copyWith(
           letterSpacing: 1.5,
           color: Colors.black),
     ));
-
-
