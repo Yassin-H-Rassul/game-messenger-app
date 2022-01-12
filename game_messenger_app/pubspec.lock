@@ -198,7 +198,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.0"
-
   intl_phone_number_input:
     dependency: "direct main"
     description:
@@ -206,7 +205,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.0+2"
-
   js:
     dependency: transitive
     description:
@@ -214,7 +212,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
-
   libphonenumber:
     dependency: transitive
     description:
@@ -243,7 +240,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0+1"
-
   lints:
     dependency: transitive
     description:

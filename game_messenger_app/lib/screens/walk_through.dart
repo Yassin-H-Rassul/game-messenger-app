@@ -6,15 +6,15 @@
 //   const Walkthrough({Key? key}) : super(key: key);
 
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
        
-      ),
-    );
-  }
-}
+//       ),
+//     );
+//   }
+// }
 
 //   @override
 //   Widget build(BuildContext context) {
