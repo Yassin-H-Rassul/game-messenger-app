@@ -16,7 +16,7 @@ class PersonalChatTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
       ),
-      height: 83.46,
+      height: 65,
       child: SafeArea(
         child: Row(
           children: [

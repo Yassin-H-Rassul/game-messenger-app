@@ -26,7 +26,7 @@ class MessageDecoration {
     );
   }
 
-  //reuseable BoxDecoration for container inside container like voice and reply
+  //reuseable BoxDecoration for the inner container, in sceanrios where we have container inside container like voice and reply
   doubleContainer(MessagesModel message) {
     return BoxDecoration(
       color: message.sender ? theLigntBlue : const Color(0xffEDEDED),
