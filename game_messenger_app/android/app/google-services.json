@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "353376073549",
+    "project_id": "game-messenger-app",
+    "storage_bucket": "game-messenger-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353376073549:android:92471a15394f3f653aa904",
+        "android_client_info": {
+          "package_name": "com.example.game_messenger_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353376073549-b2jpa9fcrveh6nue347vn5c462m1rd40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNyu92BQuaxc_Bdxtit4O20wNjWiJn98I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353376073549-b2jpa9fcrveh6nue347vn5c462m1rd40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
