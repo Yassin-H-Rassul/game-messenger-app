@@ -3,7 +3,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
-import 'package:game_messenger_app/screens/walk_through.dart';
+import 'package:game_messenger_app/screens/verification_light1.dart';
+import 'package:game_messenger_app/screens/introduction.dart';
+
 
 import 'screens/personal_chat_screen/Personal_chat_screen.dart';
 
@@ -30,7 +32,14 @@ class Main extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => PersonalChatScreen(),
+          '/': (context) => Introdution(),
+          'verification1':(context)=>verification_light1(),
+
+      
+         
+
         },
+        // ignore: dead_code
         theme: isDark ? darkTheme : lightTheme);
   }
 }
