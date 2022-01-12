@@ -7,6 +7,8 @@ import 'package:game_messenger_app/screens/verification_light1.dart';
 import 'package:game_messenger_app/screens/introduction.dart';
 
 
+import 'screens/personal_chat_screen/Personal_chat_screen.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp()
@@ -29,7 +31,7 @@ class Main extends StatelessWidget {
         // this is routes to the screen
         initialRoute: '/',
         routes: {
-
+          '/': (context) => PersonalChatScreen(),
           '/': (context) => Introdution(),
           'verification1':(context)=>verification_light1(),
 
