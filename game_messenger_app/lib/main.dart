@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/introduction.dart';
-import 'package:game_messenger_app/screens/walk_through.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,11 +25,12 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
         // this is routes to the screen
-        initialRoute: '/a',
+        initialRoute: '/',
         routes: {
-          '/': (context) => Walkthrough(),
-          '/a': (context) => introdution()
+          '/': (context) => Introdution(),
+         
         },
+        // ignore: dead_code
         theme: isDark ? darkTheme : lightTheme);
   }
 }
