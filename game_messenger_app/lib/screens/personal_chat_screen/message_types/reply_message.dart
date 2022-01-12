@@ -28,7 +28,7 @@ class ReplyMessage extends StatelessWidget {
                   crossAxisAlignment: _customDecor.contentAlign(messages),
                   children: [
                     Text(
-                      messages.sender ? 'Him' : 'You',
+                      messages.sender ? 'Him/Her' : 'You',
                       style: const TextStyle(fontSize: 10, color: theBlue),
                     ),
                     const SizedBox(
