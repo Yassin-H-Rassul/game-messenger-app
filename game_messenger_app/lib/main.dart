@@ -3,11 +3,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
-import 'package:game_messenger_app/screens/verification_light1.dart';
+import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
 import 'package:game_messenger_app/screens/introduction.dart';
-
-
-import 'screens/personal_chat_screen/Personal_chat_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,17 +26,10 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
         // this is routes to the screen
-        initialRoute: '/',
+        initialRoute: '/a',
         routes: {
-          '/': (context) => PersonalChatScreen(),
-          '/': (context) => Introdution(),
-          'verification1':(context)=>verification_light1(),
-
-      
-         
-
+          '/a': (context) => ContactScreen(),
         },
-        // ignore: dead_code
         theme: isDark ? darkTheme : lightTheme);
   }
 }
