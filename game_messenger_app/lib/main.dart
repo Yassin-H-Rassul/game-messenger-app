@@ -24,8 +24,6 @@ class Main extends StatelessWidget {
 
         // removing the red debug text just to look nice
         debugShowCheckedModeBanner: false,
-
-        // this is routes to the screen
         initialRoute: '/moreScreen',
         routes: {
           '/': (context) => Walkthrough(),
