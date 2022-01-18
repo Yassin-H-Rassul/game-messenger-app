@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
 import 'package:game_messenger_app/screens/introduction.dart';
+import 'package:game_messenger_app/screens/verification_screen/verification_light1.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +29,7 @@ class Main extends StatelessWidget {
         // this is routes to the screen
         initialRoute: '/a',
         routes: {
-          '/a': (context) => ContactScreen(),
+          '/a': (context) => verification_light1(),
         },
         theme: isDark ? darkTheme : lightTheme);
   }
