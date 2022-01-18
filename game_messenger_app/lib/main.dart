@@ -23,20 +23,14 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDark = false;
     return MaterialApp(
-        title: 'Game Messenger App',
+      title: 'Game Messenger App',
 
-        // removing the red debug text just to look nice
-        debugShowCheckedModeBanner: false,
-        initialRoute: '/moreScreen',
-        routes: {
-          '/': (context) => Walkthrough(),
-          '/moreScreen': (context) => MoreScreen(),
-
-        // this is routes to the screen
-        initialRoute: '/a',
-        routes: {
-          '/a': (context) => verification_light1(),
-        },
-        theme: isDark ? darkTheme : lightTheme);
+      // removing the red debug text just to look nice
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/moreScreen',
+      routes: {
+        '/moreScreen': (context) => MoreScreen(),
+      },
+    );
   }
 }
