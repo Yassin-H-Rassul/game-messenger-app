@@ -31,7 +31,6 @@ class Main extends StatelessWidget {
         routes: {
           '/': (context) => Walkthrough(),
           '/introductionScreen': (context) => introdution(),
-          '/contactsScreen': (context) => introdution(),
         },
         theme: isDark ? darkTheme : lightTheme);
   }
