@@ -23,7 +23,10 @@ class _verification_light1State extends State<verification_light1> {
                 margin: EdgeInsets.fromLTRB(25, 150, 25, 0),
                 child: Text(
                   'Enter Your Phone Number',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline5!
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               ConstrainedBox(
@@ -55,7 +58,7 @@ class _verification_light1State extends State<verification_light1> {
                     border: InputBorder.none,
                     filled: true,
                     fillColor: Colors.grey[100],
-                    constraints: BoxConstraints(maxWidth: 400)),
+                    constraints: BoxConstraints(maxWidth: 250)),
                 searchBoxDecoration: InputDecoration(
                     border: InputBorder.none,
                     filled: true,

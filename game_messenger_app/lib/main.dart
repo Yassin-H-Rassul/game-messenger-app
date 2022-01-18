@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
 import 'package:game_messenger_app/screens/introduction.dart';
+import 'package:game_messenger_app/screens/verification_screen/OTP_verification_screen.dart';
+import 'package:game_messenger_app/screens/verification_screen/create_profile_screen.dart';
 import 'package:game_messenger_app/screens/verification_screen/verification_light1.dart';
 
 Future<void> main() async {
@@ -30,6 +32,8 @@ class Main extends StatelessWidget {
         initialRoute: '/a',
         routes: {
           '/a': (context) => verification_light1(),
+          '/b': (context) => CreateProfileAccount(),
+          '/c': (context) => OTPVerificationScreen(),
         },
         theme: isDark ? darkTheme : lightTheme);
   }
