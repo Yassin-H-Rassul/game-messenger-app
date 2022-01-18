@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/more_screen/moreScreen.dart';
 import 'package:game_messenger_app/screens/walk_through.dart';
+import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
+import 'package:game_messenger_app/screens/introduction.dart';
+import 'package:game_messenger_app/screens/verification_screen/verification_light1.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +31,11 @@ class Main extends StatelessWidget {
         routes: {
           '/': (context) => Walkthrough(),
           '/moreScreen': (context) => MoreScreen(),
+
+        // this is routes to the screen
+        initialRoute: '/a',
+        routes: {
+          '/a': (context) => verification_light1(),
         },
         theme: isDark ? darkTheme : lightTheme);
   }
