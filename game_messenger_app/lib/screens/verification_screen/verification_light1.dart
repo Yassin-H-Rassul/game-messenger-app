@@ -1,7 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_messenger_app/screens/verification_screen/OTP_verification_screen.dart';
+import 'package:game_messenger_app/services/authentication_service.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:provider/provider.dart';
 
 class verification_light1 extends StatefulWidget {
   const verification_light1({Key? key}) : super(key: key);
@@ -11,6 +15,8 @@ class verification_light1 extends StatefulWidget {
 }
 
 class _verification_light1State extends State<verification_light1> {
+  String? phoneNo;
+  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +49,7 @@ class _verification_light1State extends State<verification_light1> {
               ),
               InternationalPhoneNumberInput(
                 onInputChanged: (PhoneNumber number) {
-                  print(number.phoneNumber);
+                  phoneNo = number.phoneNumber!;
                 },
                 errorMessage: 'please enter your phone number',
                 autoFocus: true,
@@ -69,7 +75,15 @@ class _verification_light1State extends State<verification_light1> {
                 height: 95,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => OTPVerificationScreen(
+                                phoneNo: phoneNo!,
+                              )));
+                  setState(() {});
+                },
                 child: Text(
                   'Continue',
                   style: TextStyle(color: Colors.white),

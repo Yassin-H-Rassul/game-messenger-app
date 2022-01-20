@@ -85,7 +85,7 @@ class _MoreScreenState extends State<MoreScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 35,
                     ),
                     Visibility(
                       visible: user_expaned,
@@ -120,6 +120,9 @@ class _MoreScreenState extends State<MoreScreen> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -149,6 +152,9 @@ class _MoreScreenState extends State<MoreScreen> {
                               icon: appe_more),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Visibility(
                         visible: appe_expanded,
@@ -214,6 +220,9 @@ class _MoreScreenState extends State<MoreScreen> {
                             )
                           ],
                         )),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
