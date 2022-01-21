@@ -76,13 +76,17 @@ class _verification_light1State extends State<verification_light1> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => OTPVerificationScreen(
-                                phoneNo: phoneNo!,
-                              )));
-                  setState(() {});
+                  await _authService
+                      .autoPhoneVerification(phoneNo!, context)
+                      .then((value) {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OTPVerificationScreen(
+                                  phoneNo: phoneNo!,
+                                )));
+                    setState(() {});
+                  });
                 },
                 child: Text(
                   'Continue',
