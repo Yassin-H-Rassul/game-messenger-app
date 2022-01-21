@@ -50,6 +50,7 @@ class _verification_light1State extends State<verification_light1> {
               InternationalPhoneNumberInput(
                 onInputChanged: (PhoneNumber number) {
                   phoneNo = number.phoneNumber!;
+                 
                 },
                 errorMessage: 'please enter your phone number',
                 autoFocus: true,
@@ -76,6 +77,7 @@ class _verification_light1State extends State<verification_light1> {
               ),
               ElevatedButton(
                 onPressed: () async {
+                 
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
