@@ -4,8 +4,8 @@ import 'package:game_messenger_app/screens/Chat_Screen/chatScreen.dart';
 
 
 // ps you can only have this page in Route 
-//                              '/chat
-//                              ': (context) => chat
+//                               '/chat
+//                               ': (context) => chat
 //(),
 
 class chats extends StatelessWidget {
