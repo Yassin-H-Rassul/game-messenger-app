@@ -27,10 +27,10 @@ class Main extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
         // this is routes to the screen
-        initialRoute: '/a',
+        initialRoute: '/introductionScreen',
         routes: {
           '/': (context) => Walkthrough(),
-          '/a': (context) => introdution()
+          '/introductionScreen': (context) => introdution(),
         },
         theme: isDark ? darkTheme : lightTheme);
   }
