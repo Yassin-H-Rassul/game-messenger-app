@@ -7,8 +7,8 @@ import 'package:game_messenger_app/screens/contacts_screen/widgets/list_tile.dar
 import 'package:game_messenger_app/screens/contacts_screen/widgets/search_text_field.dart';
 import 'package:game_messenger_app/screens/contacts_screen/widgets/user_image.dart';
 
-class ContactScreen extends StatelessWidget {
-  const ContactScreen({Key? key}) : super(key: key);
+class ChooseOpponent extends StatelessWidget {
+  const ChooseOpponent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,16 @@ class ContactScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              
+              Container(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: Text(
+                  "choose an opponent:",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      ?.copyWith(color: theActive),
+                ),
+              ),
               SearchTextfield(),
               Container(
                 height: mediaQuerySize.height * 0.8,
