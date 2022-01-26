@@ -21,7 +21,16 @@ class ChooseOpponent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("choose an oppon"),
+              Container(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: Text(
+                  "choose an opponent:",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      ?.copyWith(color: theActive),
+                ),
+              ),
               SearchTextfield(),
               Container(
                 height: mediaQuerySize.height * 0.8,
