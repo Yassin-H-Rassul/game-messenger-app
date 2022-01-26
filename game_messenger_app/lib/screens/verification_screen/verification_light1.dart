@@ -76,7 +76,7 @@ class _verification_light1State extends State<verification_light1> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  await _authService
+                  await Provider.of<AuthService>(context, listen: false)
                       .autoPhoneVerification(phoneNo!, context)
                       .then((value) {
                     Navigator.pushReplacement(

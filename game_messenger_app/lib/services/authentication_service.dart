@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AuthService extends ChangeNotifier {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   User? theUser = FirebaseAuth.instance.currentUser;
+  String verificationIdFromFirebase = 'empty';
 
   void setUser(User? aUser) {
     theUser = aUser;
@@ -14,37 +15,10 @@ class AuthService extends ChangeNotifier {
   Future<void> autoPhoneVerification(String phoneNo, BuildContext context,
       [enteredSmsCode]) async {
     if (enteredSmsCode != null) {
-      await _firebaseAuth.verifyPhoneNumber(
-        phoneNumber: phoneNo,
-        verificationCompleted: (PhoneAuthCredential credential) async {
-          await _firebaseAuth
-              .signInWithCredential(credential)
-              .then((userCredential) {
-            if (userCredential.user != null) {
-              setUser(userCredential.user!);
-              Navigator.pushReplacementNamed(context, '/createProfile');
-            } else {
-              print('&&&&&&&&&&&&&&&&&&&&& could not join in auto');
-            }
-          }).catchError((e) {
-            print('auto');
-            print(e);
-          });
-        },
-        verificationFailed: (FirebaseAuthException e) {
-          print('error in verification failed' + e.message!);
-        },
-        codeSent: (verificationId, [forceResendingToken]) async {
-          await _manualPhoneVerification(
-              enteredSmsCode, context, verificationId);
-        },
-        codeAutoRetrievalTimeout: (String newVerificationId) async {
-          await _manualPhoneVerification(
-              enteredSmsCode, context, newVerificationId);
-        },
-        timeout: Duration(seconds: 120),
-      );
-    } else if (enteredSmsCode == null) {
+      await _manualPhoneVerification(
+          enteredSmsCode, context, verificationIdFromFirebase);
+    }
+    if (enteredSmsCode == null) {
       await _firebaseAuth.verifyPhoneNumber(
         phoneNumber: phoneNo,
         verificationCompleted: (PhoneAuthCredential credential) async {
@@ -53,9 +27,8 @@ class AuthService extends ChangeNotifier {
               .then((userCredential) {
             if (userCredential.user != null) {
               setUser(userCredential.user);
-              Navigator.pushReplacementNamed(context, '/createProfile');
-            } else {
-              print('&&&&&&&&&&&&&&&&&&&&& could not join in auto');
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/createProfile', (Route<dynamic> route) => false);
             }
           }).catchError((e) {
             print(e);
@@ -64,7 +37,9 @@ class AuthService extends ChangeNotifier {
         verificationFailed: (FirebaseAuthException e) {
           print('error in verification failed' + e.message!);
         },
-        codeSent: (verificationId, [forceResendingToken]) async {},
+        codeSent: (verificationId, [forceResendingToken]) async {
+          verificationIdFromFirebase = verificationId;
+        },
         codeAutoRetrievalTimeout: (String newVerificationId) async {},
       );
     }
@@ -79,9 +54,8 @@ class AuthService extends ChangeNotifier {
         .then((userCredential) {
       if (userCredential.user != null) {
         setUser(userCredential.user);
-        Navigator.pushReplacementNamed(context, '/createProfile');
-      } else {
-        print('&&&&&&&&&&&&&&&&&&&&& could not join in manual');
+        Navigator.of(context).pushNamedAndRemoveUntil(
+            '/createProfile', (Route<dynamic> route) => false);
       }
     }).catchError((e) {
       print('manual');
@@ -89,8 +63,8 @@ class AuthService extends ChangeNotifier {
     });
   }
 
-  void signOut() {
-    _firebaseAuth.signOut();
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
     setUser(null);
   }
 }

@@ -27,9 +27,9 @@ class _CreateProfileAccountState extends State<CreateProfileAccount> {
         actions: [
           IconButton(
             onPressed: () {
-              _authService.signOut();
-              Navigator.of(context).pushNamed('/');
-              setState(() {});
+              _authService.signOut().then((value) {
+                Navigator.of(context).pushNamed('/');
+              });
             },
             icon: Icon(
               Icons.logout,
