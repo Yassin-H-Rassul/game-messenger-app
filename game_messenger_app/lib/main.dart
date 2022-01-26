@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/choosing_opponent_screen/choose_contacts_screen.dart';
+import 'package:game_messenger_app/screens/contacts_or_random_players_games_screen/contacts_or_random_screen.dart';
 import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
 
 import 'package:game_messenger_app/screens/introduction.dart';
@@ -46,7 +47,7 @@ class Main extends StatelessWidget {
           // this is routes to the screen
           initialRoute: '/introductionScreen',
           routes: {
-            '/introductionScreen': (context) => ChooseOpponent(),
+            '/introductionScreen': (context) => ContactsOrRandomScreen(),
           },
           theme: isDark ? darkTheme : lightTheme),
       // this is routes to the screen
