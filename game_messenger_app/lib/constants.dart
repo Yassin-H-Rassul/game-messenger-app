@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData darkTheme = ThemeData.dark().copyWith(
-  
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             primary: Color(0xff002DE3), shape: StadiumBorder())),
@@ -30,10 +29,10 @@ ThemeData darkTheme = ThemeData.dark().copyWith(
       ),
       headline5: GoogleFonts.mulish(
         fontSize: 25,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w600,
       ),
       headline6: GoogleFonts.mulish(
-        fontSize: 21,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.15,
       ),
@@ -75,76 +74,83 @@ ThemeData darkTheme = ThemeData.dark().copyWith(
     ));
 
 ThemeData lightTheme = ThemeData.light().copyWith(
-
 // button theme
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-            primary: Color(0xff002DE3), shape: StadiumBorder())),
-    textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-            primary: Color(0xff002DE3), shape: StadiumBorder())),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+          primary: Color(0xff002DE3), shape: StadiumBorder())),
+  textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+          primary: Color(0xff002DE3), shape: StadiumBorder())),
 
 //text theme
-    textTheme: TextTheme(
-      headline1: GoogleFonts.mulish(
-          fontSize: 101,
-          fontWeight: FontWeight.w300,
-          letterSpacing: -1.5,
-          color: Colors.black),
-      headline2: GoogleFonts.mulish(
-          fontSize: 63,
-          fontWeight: FontWeight.w300,
-          letterSpacing: -0.5,
-          color: Colors.black),
-      headline3: GoogleFonts.mulish(
-          fontSize: 50, fontWeight: FontWeight.w400, color: Colors.black),
-      headline4: GoogleFonts.mulish(
-          fontSize: 36,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 0.25,
-          color: Colors.black),
-      headline5: GoogleFonts.mulish(
-          fontSize: 25, fontWeight: FontWeight.w400, color: Colors.black),
-      headline6: GoogleFonts.mulish(
-          fontSize: 21,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 0.15,
-          color: Colors.black),
-      subtitle1: GoogleFonts.mulish(
-          fontSize: 17,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 0.15,
-          color: Colors.black),
-      subtitle2: GoogleFonts.mulish(
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 0.1,
-          color: Colors.black),
-      bodyText1: GoogleFonts.mulish(
-          fontSize: 17,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 0.5,
-          color: Colors.black),
-      bodyText2: GoogleFonts.mulish(
-          fontSize: 15,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 0.25,
-          color: Colors.black),
-      button: GoogleFonts.mulish(
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 1.25,
-          color: Colors.black),
-      caption: GoogleFonts.mulish(
-          fontSize: 13,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 0.4,
-          color: Colors.black),
-      overline: GoogleFonts.mulish(
-          fontSize: 10,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 1.5,
-          color: Colors.black),
-    ));
 
+  textTheme: TextTheme(
+    headline1: GoogleFonts.mulish(
+        fontSize: 101,
+        fontWeight: FontWeight.w300,
+        letterSpacing: -1.5,
+        color: Colors.black),
+    headline2: GoogleFonts.mulish(
+        fontSize: 63,
+        fontWeight: FontWeight.w300,
+        letterSpacing: -0.5,
+        color: Colors.black),
+    headline3: GoogleFonts.mulish(
+        fontSize: 50, fontWeight: FontWeight.w400, color: Colors.black),
+    headline4: GoogleFonts.mulish(
+        fontSize: 36,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.25,
+        color: Colors.black),
+    headline5: GoogleFonts.mulish(
+        fontSize: 25, fontWeight: FontWeight.w400, color: Colors.black),
+    headline6: GoogleFonts.mulish(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.15,
+        color: Colors.black),
+    subtitle1: GoogleFonts.mulish(
+        fontSize: 17,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.15,
+        color: Colors.black),
+    subtitle2: GoogleFonts.mulish(
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.1,
+        color: Colors.black),
+    bodyText1: GoogleFonts.mulish(
+        fontSize: 17,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.5,
+        color: Colors.black),
+    bodyText2: GoogleFonts.mulish(
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.25,
+        color: Colors.black),
+    button: GoogleFonts.mulish(
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 1.25,
+        color: Colors.black),
+    caption: GoogleFonts.mulish(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.4,
+        color: Colors.black),
+    overline: GoogleFonts.mulish(
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 1.5,
+        color: Colors.black),
+  ),
+);
 
+//These colors are for the personal chat entire screen, but still needs many adjusments, specially for the Dark and light theme
+const theBlue = Color(0xff002DE3);
+const theWhite = Color(0xffffffff);
+const theLigntBlue = Color(0xff375FFF);
+const theGrey = Color(0xffADB5BD);
+const theActive = Color(0xff0f1828);
+const backGround = Color(0xffE5E5E5);
