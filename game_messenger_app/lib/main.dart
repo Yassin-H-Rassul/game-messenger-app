@@ -13,8 +13,13 @@ import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp()
-      .then((value) => print('firebase successfully initialized.'));
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+    apiKey: "AIzaSyBXeJj0PM51ZPP8-PVQtL-QNLbjrLJPngg",
+    appId: "1:353376073549:web:6f28a39ec54ef5d03aa904",
+    messagingSenderId: "353376073549",
+    projectId: "game-messenger-app",
+  )).then((value) => print('firebase successfully initialized.'));
   runApp(const Main());
 }
 
