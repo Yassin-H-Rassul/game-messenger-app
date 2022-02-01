@@ -16,9 +16,12 @@ Future<void> main() async {
   await Firebase.initializeApp(
       options: FirebaseOptions(
     apiKey: "AIzaSyBXeJj0PM51ZPP8-PVQtL-QNLbjrLJPngg",
-    appId: "1:353376073549:web:6f28a39ec54ef5d03aa904",
-    messagingSenderId: "353376073549",
+    authDomain: "game-messenger-app.firebaseapp.com",
     projectId: "game-messenger-app",
+    storageBucket: "game-messenger-app.appspot.com",
+    messagingSenderId: "353376073549",
+    appId: "1:353376073549:web:6f28a39ec54ef5d03aa904",
+    measurementId: "G-GLZGCWCSLS",
   )).then((value) => print('firebase successfully initialized.'));
   runApp(const Main());
 }
