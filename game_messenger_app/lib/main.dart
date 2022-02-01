@@ -52,6 +52,7 @@ class Main extends StatelessWidget {
             '/verification': (context) => verification_light1(),
             '/createProfile': (context) => CreateProfileAccount(),
             '/moreScreen': (context) => MoreScreen(),
+            '/otpScreen':(context)=>OTPVerificationScreen(phoneNo: '744717')
           },
           theme: isDark ? darkTheme : lightTheme),
     );

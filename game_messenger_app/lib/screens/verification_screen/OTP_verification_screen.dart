@@ -25,6 +25,8 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var MQH = MediaQuery.of(context).size.height;
+    var MQW = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -34,18 +36,41 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
               width: 350,
               height: 1060,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                      height: MQW >= 820 && MQH >= 1180
+                          ? 130.0
+                          : MQW >= 768 && MQH >= 1024
+                              ? 100.0
+                              : MQW >= 393 && MQH >= 851
+                                  ? 100.0
+                                  : MQW >= 414 && MQH >= 896
+                                      ? 100.0
+                                      : MQW >= 390 && MQH >= 844
+                                          ? 100.0
+                                          : MQW >= 360 && MQH >= 740
+                                              ? 65.0
+                                              : 0),
                   Text(
                     'Enter Code',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: MQW >= 820 && MQH >= 1180
+                        ? TextStyle(fontSize: 50)
+                        : MQW >= 768 && MQH >= 1024
+                            ? TextStyle(fontSize: 55)
+                            : Theme.of(context).textTheme.headline4,
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Text(
-                      'We have sent you on SMS with the code to ${widget.phoneNo}',
-                      style: Theme.of(context).textTheme.headline6),
+                      'We have sent you on SMS with the code to \n           ${widget.phoneNo}',
+                      style: MQW >= 820 && MQH >= 1180
+                          ? TextStyle(fontSize: 30)
+                          : MQW >= 768 && MQH >= 1024
+                              ? TextStyle(fontSize: 30)
+                              : Theme.of(context).textTheme.headline6),
                   SizedBox(
                     height: 60,
                   ),
@@ -73,25 +98,36 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                   ),
                   Text(
                     'If you did not receive the code, do not worry, a new code will be sent in 60 seconds. ',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: MQW >= 820 && MQH >= 1180
+                        ? TextStyle(fontSize: 25)
+                        : MQW >= 768 && MQH >= 1024
+                            ? TextStyle(fontSize: 25)
+                            : Theme.of(context).textTheme.headline6,
                   ),
                   SizedBox(
                     height: 30,
                   ),
                   ElevatedButton(
-                    onPressed: () async {
-                      print('++++++++++++++++++++++++++++++++++ Sms is :' +
+                    onPressed: () //async
+                        {
+                      Navigator.pushNamed(context, '/createProfile');
+
+                      /*  print('++++++++++++++++++++++++++++++++++ Sms is :' +
                           _smsController.text);
                       await Provider.of<AuthService>(context, listen: false)
                           .autoPhoneVerification(
                               widget.phoneNo, context, _smsController.text)
                           .then((value) {
                         setState(() {});
-                      });
+                      }); */
                     },
                     child: Text(
                       'Continue',
-                      style: TextStyle(color: Colors.white),
+                      style: MQW >= 820 && MQH >= 1180
+                          ? TextStyle(fontSize: 25)
+                          : MQW >= 768 && MQH >= 1024
+                              ? TextStyle(fontSize: 25)
+                              : TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
                         minimumSize:

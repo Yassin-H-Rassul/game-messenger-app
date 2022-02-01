@@ -32,7 +32,7 @@ class _verification_light1State extends State<verification_light1> {
                     top: MQW >= 820 && MQH >= 1180
                         ? 300
                         : MQW >= 390 && MQH >= 844
-                            ? 150
+                            ? 100
                             : MQW >= 768 && MQH >= 1024
                                 ? 250
                                 : MQW >= 393 && MQH >= 851
@@ -123,18 +123,22 @@ class _verification_light1State extends State<verification_light1> {
                 height: 95,
               ),
               ElevatedButton(
-                onPressed: () async {
-                  await Provider.of<AuthService>(context, listen: false)
-                      .autoPhoneVerification(phoneNo!, context)
-                      .then((value) {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OTPVerificationScreen(
-                                  phoneNo: phoneNo!,
-                                )));
-                    setState(() {});
-                  });
+                onPressed: () // async
+                    {
+                  Navigator.pushNamed(context, '/otpScreen');
+                  //  await Provider.of<AuthService>(context, listen: false)
+                  //      .autoPhoneVerification(phoneNo!, context)
+                  //      .then((value) {
+                  //    Navigator.pushReplacement(
+                  //       context,
+                  //      MaterialPageRoute(
+                  //          builder: (context) => OTPVerificationScreen(
+                  //                phoneNo: phoneNo!,
+                  //             )));
+                  //  setState(() {}
+                  //  );
+                  // }
+                  //);
                 },
                 child: Text(
                   'Continue',
