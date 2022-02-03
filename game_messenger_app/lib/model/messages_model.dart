@@ -2,12 +2,18 @@ enum messageType { text, audio, image, reply }
 
 class MessagesModel {
   final String message;
+  final String imageUrl;
+  final String voiceUrl;
+  final String senderId;
   final bool sender;
   final DateTime time;
   final messageType type;
 
   MessagesModel({
     required this.sender,
+    required this.imageUrl,
+    required this.voiceUrl,
+    required this.senderId,
     required this.message,
     required this.time,
     required this.type,
@@ -23,29 +29,44 @@ List<MessagesModel> messageFields = [
     message: 'Look at how chocho sleep in my arms!',
     time: DateTime.parse('2021-01-01 16:46'),
     type: messageType.image,
+    voiceUrl: '',
+    imageUrl: '',
+    senderId: '',
   ),
   MessagesModel(
     sender: false,
     message: 'Of course let me know if you are on your way',
     time: DateTime.parse('2021-01-01 16:50'),
     type: messageType.reply,
+    voiceUrl: '',
+    imageUrl: '',
+    senderId: '',
   ),
   MessagesModel(
     sender: true,
     message: 'Ok, I\'m on my way',
     time: DateTime.parse('2021-01-01 16:50'),
     type: messageType.text,
+    voiceUrl: '',
+    imageUrl: '',
+    senderId: '',
   ),
   MessagesModel(
     sender: true,
     message: '',
     time: DateTime.parse('2021-01-01 16:50'),
     type: messageType.audio,
+    voiceUrl: '',
+    imageUrl: '',
+    senderId: '',
   ),
   MessagesModel(
     sender: false,
     message: 'Good morning, Did you sleep well?',
     time: DateTime.parse('2021-01-01 09:45'),
     type: messageType.text,
+    voiceUrl: '',
+    imageUrl: '',
+    senderId: '',
   ),
 ];

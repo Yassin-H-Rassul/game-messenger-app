@@ -59,20 +59,20 @@ class _CreateProfileAccountState extends State<CreateProfileAccount> {
                     )),
                   ),
                   Positioned(
-                      bottom: 1,
-                      right: 1,
-                      child: Container(
-                        height: 30,
-                        width: 30,
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ),
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                      ))
+                    bottom: 1,
+                    right: 1,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    ),
+                  )
                 ],
               ),
             ),
