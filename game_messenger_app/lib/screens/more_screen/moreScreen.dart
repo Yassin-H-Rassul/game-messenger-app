@@ -40,49 +40,47 @@ class _MoreScreenState extends State<MoreScreen> {
                 height: MediaQuery.of(context).size.height * 0.7,
                 child: ListView(
                   children: [
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Image.asset(
-                                //get user image
-                                'assets/images/user.png',
-                                width: 50,
-                                height: 50,
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Column(
-                                children: [
-                                  Text("User name"),
-                                  Text(
-                                    "+964 75X XXX XXXX",
-                                    style: TextStyle(color: Colors.black26),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                          IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (user_expaned == false) {
-                                    expand_more = const Icon(Icons.expand_more);
-                                    user_expaned = true;
-                                  } else {
-                                    expand_more =
-                                        const Icon(Icons.navigate_next);
-                                    user_expaned = false;
-                                  }
-                                });
-                              },
-                              iconSize: 34,
-                              icon: expand_more),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              //get user image
+                              'assets/images/user.png',
+                              width: 50,
+                              height: 50,
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Column(
+                              children: [
+                                Text("User name"),
+                                Text(
+                                  "+964 75X XXX XXXX",
+                                  style: TextStyle(color: Colors.black26),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              setState(() {
+                                if (user_expaned == false) {
+                                  expand_more = const Icon(Icons.expand_more);
+                                  user_expaned = true;
+                                } else {
+                                  expand_more =
+                                      const Icon(Icons.navigate_next);
+                                  user_expaned = false;
+                                }
+                              });
+                            },
+                            iconSize: 34,
+                            icon: expand_more),
+                      ],
                     ),
                     const SizedBox(
                       height: 35,

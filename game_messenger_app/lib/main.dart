@@ -5,7 +5,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
 import 'package:game_messenger_app/screens/more_screen/moreScreen.dart';
-import 'package:game_messenger_app/screens/verification_screen/OTP_verification_screen.dart';
 import 'package:game_messenger_app/screens/verification_screen/create_profile_screen.dart';
 import 'package:game_messenger_app/screens/verification_screen/verification_light1.dart';
 import 'package:game_messenger_app/services/authentication_service.dart';
@@ -37,7 +36,7 @@ class Main extends StatelessWidget {
           debugShowCheckedModeBanner: false,
 
           // this is routes to the screen
-          initialRoute: '/',
+          initialRoute: '/moreScreen',
           routes: {
             '/': (context) => AuthenticationWrapper(),
             '/verification': (context) => verification_light1(),
