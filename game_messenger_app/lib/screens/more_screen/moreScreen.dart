@@ -40,7 +40,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 height: MediaQuery.of(context).size.height * 0.7,
                 child: ListView(
                   children: [
-                    Row(
+                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
