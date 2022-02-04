@@ -16,13 +16,15 @@ class _CreateProfileAccountState extends State<CreateProfileAccount> {
 
   @override
   Widget build(BuildContext context) {
+    var MQH = MediaQuery.of(context).size.height;
+    var MQW = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           'Your Profile',
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.bodyText2,
         ),
         actions: [
           IconButton(
@@ -43,13 +45,23 @@ class _CreateProfileAccountState extends State<CreateProfileAccount> {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+                height: MQW >= 820 && MQH >= 1180
+                    ? 130.0
+                    : MQW >= 768 && MQH >= 1024
+                        ? 100.0
+                        : 0),
             TextButton(
               onPressed: () {},
               child: Stack(
                 children: <Widget>[
                   CircleAvatar(
                     backgroundColor: color,
-                    radius: 50,
+                    radius: MQW >= 820 && MQH >= 1180
+                        ? 75.0
+                        : MQW >= 768 && MQH >= 1024
+                            ? 75.0
+                            : 40,
                     child: ClipOval(
                         child: Image.network(
                       "https://static.thenounproject.com/png/3465604-200.png",
@@ -82,7 +94,13 @@ class _CreateProfileAccountState extends State<CreateProfileAccount> {
             Padding(
               padding: const EdgeInsets.all(20),
               child: TextField(
-                obscureText: true,
+                style: TextStyle(
+                    fontSize: MQW >= 820 && MQH >= 1180
+                        ? 25.0
+                        : MQW >= 768 && MQH >= 1024
+                            ? 25.0
+                            : 10),
+                obscureText: false,
                 autofocus: true,
                 decoration: InputDecoration(
                   border: InputBorder.none,

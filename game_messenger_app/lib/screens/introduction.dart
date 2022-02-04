@@ -29,8 +29,10 @@ class Introdution extends StatelessWidget {
                 width: 350,
                 height: 50,
                 child: ElevatedButton(
-                    onPressed: () {}, child: Text('Start messigin'))),
-                    
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/verification');
+                    },
+                    child: Text('Start messaging'))),
           ],
         ),
       ),
