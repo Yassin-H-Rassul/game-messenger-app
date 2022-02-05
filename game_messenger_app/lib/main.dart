@@ -4,16 +4,28 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
+import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
 import 'package:game_messenger_app/screens/more_screen/moreScreen.dart';
 import 'package:game_messenger_app/screens/verification_screen/OTP_verification_screen.dart';
 import 'package:game_messenger_app/screens/verification_screen/create_profile_screen.dart';
 import 'package:game_messenger_app/screens/verification_screen/verification_light1.dart';
+import 'package:game_messenger_app/services/RealTime_DB_service.dart';
 import 'package:game_messenger_app/services/authentication_service.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp()
+  await Firebase.initializeApp(
+          //     options: FirebaseOptions(
+          //   apiKey: "AIzaSyBXeJj0PM51ZPP8-PVQtL-QNLbjrLJPngg",
+          //   authDomain: "game-messenger-app.firebaseapp.com",
+          //   projectId: "game-messenger-app",
+          //   storageBucket: "game-messenger-app.appspot.com",
+          //   messagingSenderId: "353376073549",
+          //   appId: "1:353376073549:web:6f28a39ec54ef5d03aa904",
+          //   measurementId: "G-GLZGCWCSLS",
+          // )
+          )
       .then((value) => print('firebase successfully initialized.'));
   runApp(const Main());
 }
@@ -29,6 +41,9 @@ class Main extends StatelessWidget {
         ChangeNotifierProvider<AuthService>(
           create: (context) => AuthService(),
         ),
+        ChangeNotifierProvider<RealTimeDb>(
+          create: (context) => RealTimeDb(),
+        ),
       ],
       child: MaterialApp(
           title: 'Game Messenger App',
@@ -43,6 +58,7 @@ class Main extends StatelessWidget {
             '/verification': (context) => verification_light1(),
             '/createProfile': (context) => CreateProfileAccount(),
             '/moreScreen': (context) => MoreScreen(),
+            '/contact': (context) => ContactScreen()
           },
           theme: isDark ? darkTheme : lightTheme),
     );

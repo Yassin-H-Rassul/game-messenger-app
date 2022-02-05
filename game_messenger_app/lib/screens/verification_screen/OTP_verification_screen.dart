@@ -82,8 +82,12 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                     onPressed: () async {
                       print('++++++++++++++++++++++++++++++++++ Sms is :' +
                           _smsController.text);
-                      await _authService.autoPhoneVerification(
-                          widget.phoneNo, context, _smsController.text);
+                      await Provider.of<AuthService>(context, listen: false)
+                          .autoPhoneVerification(
+                              widget.phoneNo, context, _smsController.text)
+                          .then((value) {
+                        setState(() {});
+                      });
                     },
                     child: Text(
                       'Continue',
