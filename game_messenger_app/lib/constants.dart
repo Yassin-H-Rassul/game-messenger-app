@@ -3,15 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ThemeProvider extends ChangeNotifier {
-  ThemeMode themeMode = ThemeMode.system;
-
-  void isLightMode(bool isLight) {
-    themeMode = isLight ? ThemeMode.light : ThemeMode.dark;
-    notifyListeners();
-  }
-}
-
 ThemeData darkTheme = ThemeData.dark().copyWith(
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(

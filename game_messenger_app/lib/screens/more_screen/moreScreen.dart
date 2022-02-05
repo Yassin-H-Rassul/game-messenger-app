@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:game_messenger_app/constants.dart';
-import 'package:provider/provider.dart';
 
 class MoreScreen extends StatefulWidget {
   MoreScreen({Key? key}) : super(key: key);
@@ -20,7 +18,6 @@ class _MoreScreenState extends State<MoreScreen> {
   bool notefication = true;
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -43,7 +40,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 height: MediaQuery.of(context).size.height * 0.7,
                 child: ListView(
                   children: [
-                    Row(
+                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
@@ -75,7 +72,8 @@ class _MoreScreenState extends State<MoreScreen> {
                                   expand_more = const Icon(Icons.expand_more);
                                   user_expaned = true;
                                 } else {
-                                  expand_more = const Icon(Icons.navigate_next);
+                                  expand_more =
+                                      const Icon(Icons.navigate_next);
                                   user_expaned = false;
                                 }
                               });
@@ -169,12 +167,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                   backgroundColor: MaterialStateProperty.all(
                                       Colors.grey[200]),
                                 ),
-                                onPressed: () {
-                                  final provider = Provider.of<ThemeProvider>(
-                                      context,
-                                      listen: false);
-                                  provider.isLightMode(true);
-                                },
+                                onPressed: () {},
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [
@@ -204,12 +197,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.black87),
                                 ),
-                                onPressed: () {
-                                  final provider = Provider.of<ThemeProvider>(
-                                      context,
-                                      listen: false);
-                                  provider.isLightMode(false);
-                                },
+                                onPressed: () {},
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [

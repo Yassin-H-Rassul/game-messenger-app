@@ -21,38 +21,40 @@ class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => ChangeNotifierProvider(
-        create: (context) => ThemeProvider(),
-        builder: (context, _) {
-          final themeProvider = Provider.of<ThemeProvider>(context);
-          return MaterialApp(
-            title: 'Game Messenger App',
+  Widget build(BuildContext context) {
+    bool isDark = false;
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AuthService>(
+          create: (context) => AuthService(),
+        ),
+      ],
+      child: MaterialApp(
+          title: 'Game Messenger App',
 
-            // removing the red debug text just to look nice
-            debugShowCheckedModeBanner: false,
+          // removing the red debug text just to look nice
+          debugShowCheckedModeBanner: false,
 
-            // this is routes to the screen
-            initialRoute: '/moreScreen',
-            routes: {
-              // '/': (context) => AuthenticationWrapper(),
-              '/verification': (context) => verification_light1(),
-              '/createProfile': (context) => CreateProfileAccount(),
-              '/moreScreen': (context) => MoreScreen(),
-            },
-            themeMode: themeProvider.themeMode,
-            theme: lightTheme, darkTheme: darkTheme,
-          );
-        },
-      );
+          // this is routes to the screen
+          initialRoute: '/moreScreen',
+          routes: {
+            '/': (context) => AuthenticationWrapper(),
+            '/verification': (context) => verification_light1(),
+            '/createProfile': (context) => CreateProfileAccount(),
+            '/moreScreen': (context) => MoreScreen(),
+          },
+          theme: isDark ? darkTheme : lightTheme),
+    );
+  }
 }
 
-// class AuthenticationWrapper extends StatelessWidget {
-//   Widget build(BuildContext context) {
-//     User? theUser = Provider.of<AuthService>(context).theUser;
+class AuthenticationWrapper extends StatelessWidget {
+  Widget build(BuildContext context) {
+    User? theUser = Provider.of<AuthService>(context).theUser;
 
-//     if (theUser != null) {
-//       return CreateProfileAccount();
-//     }
-//     return verification_light1();
-//   }
-// }
+    if (theUser != null) {
+      return CreateProfileAccount();
+    }
+    return verification_light1();
+  }
+}
