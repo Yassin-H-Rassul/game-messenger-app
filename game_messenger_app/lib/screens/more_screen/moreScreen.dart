@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:game_messenger_app/constants.dart';
+import 'package:game_messenger_app/services/shared_preferences/shared_preferences_helper.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MoreScreen extends StatefulWidget {
   MoreScreen({Key? key}) : super(key: key);
@@ -21,9 +25,9 @@ class _MoreScreenState extends State<MoreScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text(
+        title: Text(
           "More",
-          style: TextStyle(color: Colors.black),
+          style: Theme.of(context).textTheme.headline4,
         ),
         //removing back arrow button
         automaticallyImplyLeading: false,
@@ -40,7 +44,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 height: MediaQuery.of(context).size.height * 0.7,
                 child: ListView(
                   children: [
-                     Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
@@ -72,8 +76,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                   expand_more = const Icon(Icons.expand_more);
                                   user_expaned = true;
                                 } else {
-                                  expand_more =
-                                      const Icon(Icons.navigate_next);
+                                  expand_more = const Icon(Icons.navigate_next);
                                   user_expaned = false;
                                 }
                               });
@@ -167,7 +170,12 @@ class _MoreScreenState extends State<MoreScreen> {
                                   backgroundColor: MaterialStateProperty.all(
                                       Colors.grey[200]),
                                 ),
-                                onPressed: () {},
+                                onPressed: () async {
+                                  Provider.of<SharedPreferencesHelper>(context,
+                                          listen: false)
+                                      .setTheme("light");
+                                  setState(() {});
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [
@@ -197,7 +205,12 @@ class _MoreScreenState extends State<MoreScreen> {
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.black87),
                                 ),
-                                onPressed: () {},
+                                onPressed: () async {
+                                  Provider.of<SharedPreferencesHelper>(context,
+                                          listen: false)
+                                      .setTheme("dark");
+                                  setState(() {});
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [
