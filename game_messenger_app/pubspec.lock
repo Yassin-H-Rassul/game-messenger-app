@@ -147,21 +147,21 @@ packages:
       name: firebase_database
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "9.0.4"
+    version: "9.0.5"
   firebase_database_platform_interface:
     dependency: transitive
     description:
       name: firebase_database_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0+3"
+    version: "0.2.0+4"
   firebase_database_web:
     dependency: transitive
     description:
       name: firebase_database_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0+3"
+    version: "0.2.0+4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -351,7 +351,7 @@ packages:
       name: path_provider_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   path_provider_windows:
     dependency: transitive
     description:
@@ -386,7 +386,7 @@ packages:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.1.2"
   process:
     dependency: transitive
     description:

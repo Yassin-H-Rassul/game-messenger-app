@@ -4,6 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_messenger_app/constants.dart';
+import 'package:game_messenger_app/screens/choosing_opponent_screen/choose_contacts_screen.dart';
+import 'package:game_messenger_app/screens/contacts_or_random_players_games_screen/contacts_or_random_screen.dart';
+import 'package:game_messenger_app/screens/contacts_screen/contact_screen.dart';
+
+import 'package:game_messenger_app/screens/introduction.dart';
+import 'package:game_messenger_app/screens/introduction.dart';
+import 'package:game_messenger_app/screens/walk_through.dart';
+
 import 'package:game_messenger_app/screens/more_screen/moreScreen.dart';
 import 'package:game_messenger_app/screens/verification_screen/create_profile_screen.dart';
 import 'package:game_messenger_app/screens/verification_screen/verification_light1.dart';
@@ -37,7 +45,10 @@ class _MainState extends State<Main> {
         ChangeNotifierProvider<SharedPreferencesHelper>(
             create: (context) => SharedPreferencesHelper()),
       ],
+
       child: MaterialAppWidget(),
+
+    
     );
   }
 }
